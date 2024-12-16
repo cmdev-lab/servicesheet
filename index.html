@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earthmoving Equipment Service Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Service Sheet</h1>
+        <!-- New: File input for header image -->
+        <div class="header-image-upload">
+          <label for="header-img">Upload Header Image (Logo):</label>
+          <input type="file" id="header-img" accept="image/*" />
+        </div>
+      </header>
+    
+
+  <!-- Equipment Details Section -->
+  <section class="equipment-details">
+    <h2>Equipment Details</h2>
+    <form id="equipment-details-form">
+      <div class="form-group">
+        <label for="equipment-type">Equipment Type:</label>
+        <input type="text" id="equipment-type" name="equipment-type" placeholder="e.g. Excavator, Bulldozer"/>
+      </div>
+      <div class="form-group">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" placeholder="e.g. Caterpillar"/>
+      </div>
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" placeholder="e.g. 320D"/>
+      </div>
+      <div class="form-group">
+        <label for="serial">Serial #:</label>
+        <input type="text" id="serial" name="serial" placeholder="e.g. ABC123456"/>
+      </div>
+      <div class="form-group">
+        <label for="hours">Hours of Operation:</label>
+        <input type="number" id="hours" name="hours" min="0" placeholder="e.g. 2500"/>
+      </div>
+      <div class="form-group">
+        <label for="service-date">Service Date:</label>
+        <input type="date" id="service-date" name="service-date"/>
+      </div>
+      <div class="form-group">
+        <label for="technician">Service Technician:</label>
+        <input type="text" id="technician" name="technician" placeholder="Tech Name"/>
+      </div>
+    </form>
+  </section>
+
+  <!-- Checklist Section -->
+  <section class="checklist">
+    <h2>Service Checklist</h2>
+    <form id="checklist-form">
+
+      <!-- Engine Check -->
+      <fieldset class="inspection-section">
+        <legend>Engine</legend>
+        <div class="check-group">
+          <input type="checkbox" id="engine-oil" name="engine-oil"/>
+          <label for="engine-oil">Check engine oil level and condition</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="oil-filter" name="oil-filter"/>
+          <label for="oil-filter">Replace oil filter (if due)</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="coolant" name="coolant"/>
+          <label for="coolant">Check coolant level, hoses, and clamps</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="radiator" name="radiator"/>
+          <label for="radiator">Inspect radiator fins for debris/damage</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="thermostat" name="thermostat"/>
+          <label for="thermostat">Verify thermostat operation</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="fan-belt" name="fan-belt"/>
+          <label for="fan-belt">Inspect fan belt tension and condition</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="engine-leaks" name="engine-leaks"/>
+          <label for="engine-leaks">Check for oil or coolant leaks around engine</label>
+        </div>
+        <!-- Container for dynamically added items -->
+        <div class="custom-items-container"></div>
+        <button type="button" class="add-item-btn">Add Custom Inspection</button>
+      </fieldset>
+
+      <!-- Hydraulic System -->
+      <fieldset class="inspection-section">
+        <legend>Hydraulic System</legend>
+        <div class="check-group">
+          <input type="checkbox" id="hydraulic-oil" name="hydraulic-oil"/>
+          <label for="hydraulic-oil">Check hydraulic oil level</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="hoses" name="hoses"/>
+          <label for="hoses">Inspect hoses and fittings for leaks or damage</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="cylinders" name="cylinders"/>
+          <label for="cylinders">Inspect hydraulic cylinders and rods</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="hydraulic-filter" name="hydraulic-filter"/>
+          <label for="hydraulic-filter">Check/replace hydraulic filter (if due)</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="pump-noise" name="pump-noise"/>
+          <label for="pump-noise">Listen for abnormal pump noise</label>
+        </div>
+        <!-- Container for dynamically added items -->
+        <div class="custom-items-container"></div>
+        <button type="button" class="add-item-btn">Add Custom Inspection</button>
+      </fieldset>
+
+      <!-- Electrical System -->
+      <fieldset class="inspection-section">
+        <legend>Electrical System</legend>
+        <div class="check-group">
+          <input type="checkbox" id="battery" name="battery"/>
+          <label for="battery">Check battery terminals, cables, and fluid</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="alternator" name="alternator"/>
+          <label for="alternator">Confirm alternator charging voltage</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="lights" name="lights"/>
+          <label for="lights">Test all lights, indicators, and wiring</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="starter" name="starter"/>
+          <label for="starter">Check starter motor operation</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="fuses" name="fuses"/>
+          <label for="fuses">Inspect fuses and relays</label>
+        </div>
+        <!-- Container for dynamically added items -->
+        <div class="custom-items-container"></div>
+        <button type="button" class="add-item-btn">Add Custom Inspection</button>
+      </fieldset>
+
+      <!-- Undercarriage / Chassis -->
+      <fieldset class="inspection-section">
+        <legend>Undercarriage & Chassis</legend>
+        <div class="check-group">
+          <input type="checkbox" id="tracks" name="tracks"/>
+          <label for="tracks">Inspect tracks/tires for wear or damage</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="rollers" name="rollers"/>
+          <label for="rollers">Check rollers, sprockets, and idlers</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="frame" name="frame"/>
+          <label for="frame">Inspect chassis frame for cracks or damage</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="steering-components" name="steering-components"/>
+          <label for="steering-components">Check steering components (if applicable)</label>
+        </div>
+        <!-- Container for dynamically added items -->
+        <div class="custom-items-container"></div>
+        <button type="button" class="add-item-btn">Add Custom Inspection</button>
+      </fieldset>
+
+      <!-- Lubrication / Filters -->
+      <fieldset class="inspection-section">
+        <legend>Lubrication & Filters</legend>
+        <div class="check-group">
+          <input type="checkbox" id="air-filter" name="air-filter"/>
+          <label for="air-filter">Check and clean/replace air filter</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="fuel-filter" name="fuel-filter"/>
+          <label for="fuel-filter">Check/replace fuel filter (if due)</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="grease-points" name="grease-points"/>
+          <label for="grease-points">Lubricate all required grease points</label>
+        </div>
+        <div class="check-group">
+          <input type="checkbox" id="transmission-fluid" name="transmission-fluid"/>
+          <label for="transmission-fluid">Check transmission fluid level (if applicable)</label>
+        </div>
+        <!-- Container for dynamically added items -->
+        <div class="custom-items-container"></div>
+        <button type="button" class="add-item-btn">Add Custom Inspection</button>
+      </fieldset>
+
+    </form>
+  </section>
+
+  <!-- Notes Section -->
+  <section class="notes-section">
+    <h2>Additional Notes</h2>
+    <textarea name="additional-notes" id="additional-notes" rows="5" placeholder="Write any additional observations or notes here..."></textarea>
+  </section>
+
+  <!-- Form Actions Section -->
+  <section class="actions">
+    <button id="generate-pdf" type="button">Generate PDF</button>
+  </section>
+
+  <!-- Inline JavaScript to handle adding custom items -->
+  <script>
+    // Query all "Add Custom Inspection" buttons
+    const addButtons = document.querySelectorAll('.add-item-btn');
+
+    addButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Create a new custom item row
+        const container = button.parentElement.querySelector('.custom-items-container');
+
+        // You could prompt the user or create a small inline text input. 
+        // For simplicity, let's just use a prompt.
+        const customLabel = prompt("Enter the custom inspection item:");
+
+        if (customLabel && customLabel.trim() !== "") {
+          // Build the checkbox + label
+          const div = document.createElement('div');
+          div.classList.add('check-group');
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          // Optional: create a unique ID
+          checkbox.id = "custom-" + Math.random().toString(36).substring(2, 15);
+          checkbox.name = "custom-inspection";
+
+          const label = document.createElement('label');
+          label.setAttribute('for', checkbox.id);
+          label.textContent = customLabel;
+
+          div.appendChild(checkbox);
+          div.appendChild(label);
+          container.appendChild(div);
+        }
+      });
+    });
+  </script>
+  <!-- Include jsPDF (from a CDN or local bundle) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const { jsPDF } = window.jspdf;
+  const generatePdfBtn = document.getElementById("generate-pdf");
+
+  generatePdfBtn.addEventListener("click", async () => {
+    // Grab the image file from the input if needed
+    const fileInput = document.getElementById("header-img");
+    const file = fileInput?.files?.[0] || null;
+    let headerImageData = null;
+    if (file) {
+      headerImageData = await readFileAsDataURL(file);
+    }
+
+    /**
+     * Create a new jsPDF instance. We'll define bigger top and bottom margins
+     * to create extra "padding" in the PDF.
+     */
+    const doc = new jsPDF({ orientation: "portrait", unit: "px", format: "a4" });
+
+    // Increase top and bottom margins for extra padding
+    const topMargin = 40;    // Was 20 before; now bigger for extra top padding
+    const bottomMargin = 40; // Increased bottom margin as well
+    const pageHeight = doc.internal.pageSize.getHeight();  // ~842 px at 72 DPI for A4
+    const maxY = pageHeight - bottomMargin;
+    
+    
+    let x = 20; 
+    let y = topMargin;
+
+    /**
+     * Check if there's enough vertical space. If not, start a new page.
+     * If you want a repeated header on each new page, place it after `doc.addPage()`.
+     */
+    function checkPageSpace(lineHeight = 15) {
+      if (y + lineHeight > maxY) {
+        doc.addPage();
+        y = topMargin;
+
+        // Re-add the header image if we want a repeating header
+        if (headerImageData) {
+          doc.addImage(headerImageData, "PNG", x, y, 150, 0);
+          // Place the heading text to the right of the logo or wherever you prefer
+          const headingX = 180;
+          const headingY = y + 30;
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(14);
+          doc.text("Service Sheet", headingX, headingY);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+
+          // Add extra spacing below the header
+          y += 100;
+        }
+      }
+    }
+
+    // Helper to read file as Base64
+    function readFileAsDataURL(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (evt) => resolve(evt.target.result);
+        reader.onerror = (err) => reject(err);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Helper to get form values
+    function getValue(id) {
+      const el = document.getElementById(id);
+      return el?.value?.trim() || " ";
+    }
+
+    /**
+     * STEP 1: Place the header. 
+     *         - Logo at (x=20, y=40), width=150
+     *         - Heading text to the right (e.g., x=180, y=70)
+     * Add extra spacing below them.
+     */
+    if (headerImageData) {
+      doc.addImage(headerImageData, "PNG", x, y, 150, 0);
+    }
+
+    const headingX = 180;
+    const headingY = y + 30;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.text("Service Sheet", headingX, headingY);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+
+    // Add extra padding below the header
+    y += 100; // This vertical offset ensures there's blank space under the header.
+
+    /**
+     * STEP 2: Print Equipment Details
+     */
+    const details = [
+      `Equipment Type: ${getValue("equipment-type")}`,
+      `Make: ${getValue("make")}`,
+      `Model: ${getValue("model")}`,
+      `Serial #: ${getValue("serial")}`,
+      `Hours: ${getValue("hours")}`,
+      `Service Date: ${getValue("service-date")}`,
+      `Technician: ${getValue("technician")}`,
+    ];
+
+    details.forEach((line) => {
+      checkPageSpace();
+      doc.text(line, x, y);
+      y += 15;
+    });
+    y += 10;
+
+    /**
+     * STEP 3: Checklist (Fieldsets)
+     */
+    const checklistForm = document.getElementById("checklist-form");
+    const fieldsets = checklistForm.querySelectorAll("fieldset.inspection-section");
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    doc.text("Checklist Items:", x, y);
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    y += 20;
+
+    fieldsets.forEach((fieldset) => {
+      // Widow/orphan check: heading + at least one item
+      const legend = fieldset.querySelector("legend");
+      const sectionTitle = legend ? legend.textContent : "Section";
+      const checkboxes = fieldset.querySelectorAll('input[type="checkbox"]');
+      
+      if (y + 15 + 15 > maxY) {
+        doc.addPage();
+        y = topMargin;
+
+        // If repeating header, re-add logo + heading
+        if (headerImageData) {
+          doc.addImage(headerImageData, "PNG", x, y, 150, 0);
+          const headingX2 = 180;
+          const headingY2 = y + 30;
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(14);
+          doc.text("Earthmoving Equipment Service Checklist", headingX2, headingY2);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+          y += 100;
+        }
+      }
+
+      doc.setFont("helvetica", "bold");
+      doc.text(sectionTitle, x, y);
+      doc.setFont("helvetica", "normal");
+      y += 15;
+
+      checkboxes.forEach((checkbox) => {
+        checkPageSpace();
+        const label = fieldset.querySelector(`label[for="${checkbox.id}"]`);
+        if (label) {
+          const status = checkbox.checked ? "[X]" : "[ ]";
+          doc.text(`${status} ${label.textContent}`, x, y);
+          y += 15;
+        }
+      });
+
+      y += 10;
+      checkPageSpace();
+    });
+
+    /**
+     * STEP 4: Additional Notes
+     */
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    checkPageSpace();
+    doc.text("Additional Notes:", x, y);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    y += 15;
+
+    const notes = getValue("additional-notes");
+    const wrappedNotes = doc.splitTextToSize(notes, 550);
+    wrappedNotes.forEach((line) => {
+      checkPageSpace();
+      doc.text(line, x, y);
+      y += 15;
+    });
+
+    // STEP 5: Save PDF
+    doc.save("earthmoving-checklist.pdf");
+  });
+});
+  </script>
+</body>
+</html>
