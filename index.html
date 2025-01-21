@@ -310,7 +310,7 @@
     const headingY = y + 30;
     doc.setFont("helvetica", "bold");
     doc.setFontSize(14);
-    doc.text("Service Sheet", headingX, headingY);
+    doc.text("Mobile Plant Service Sheet", headingX, headingY);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
 
@@ -327,7 +327,7 @@
       `Serial #: ${getValue("serial")}`,
       `Hours: ${getValue("hours")}`,
       `Service Date: ${getValue("service-date")}`,
-      `Technician: ${getValue("technician")}`,
+      `Asset Number ${getValue("asset")}`,
     ];
 
     details.forEach((line) => {
