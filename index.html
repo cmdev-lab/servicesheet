@@ -23,6 +23,10 @@
     <h2>Equipment Details</h2>
     <form id="equipment-details-form">
       <div class="form-group">
+        <div class="form-group">
+        <label for="asset">Asset Number:</label>
+        <input type="text" id="asset" name="asset" placeholder="Asset Number"/>
+      </div>
         <label for="equipment-type">Equipment Type:</label>
         <input type="text" id="equipment-type" name="equipment-type" placeholder="e.g. Excavator, Bulldozer"/>
       </div>
@@ -45,10 +49,6 @@
       <div class="form-group">
         <label for="service-date">Service Date:</label>
         <input type="date" id="service-date" name="service-date"/>
-      </div>
-      <div class="form-group">
-        <label for="asset">Asset Number:</label>
-        <input type="text" id="asset" name="asset" placeholder="Asset Number"/>
       </div>
     </form>
   </section>
@@ -321,13 +321,14 @@
      * STEP 2: Print Equipment Details
      */
     const details = [
+      `Asset Number: ${getValue("asset")}`,
       `Equipment Type: ${getValue("equipment-type")}`,
       `Make: ${getValue("make")}`,
       `Model: ${getValue("model")}`,
       `Serial #: ${getValue("serial")}`,
       `Hours: ${getValue("hours")}`,
       `Service Date: ${getValue("service-date")}`,
-      `Asset Number ${getValue("asset")}`,
+      
     ];
 
     details.forEach((line) => {
